@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import Navbar from "@/components/navbar/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const sora = Sora({
+  subsets: ["latin"],
+  variable: "--font-sora",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +21,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning className="h-full w-full">
+      <body className={`${sora.className} h-full w-full`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="dark:bg-purple-950 bg-slate-300 h-full w-full">
+            <Navbar />
+            {children}
+          </div>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
