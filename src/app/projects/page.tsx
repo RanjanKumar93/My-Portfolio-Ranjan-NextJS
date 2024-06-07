@@ -10,7 +10,7 @@ const ProjectsPage = () => {
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: -80, opacity: 0 }}
       transition={{ duration: 0.4 }}
-      className="h-full container"
+      className="h-full dark:bg-slate-950 bg-slate-300 container"
     >
       <Projects />
     </motion.div>

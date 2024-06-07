@@ -22,7 +22,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="h-full w-full">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className="h-full w-full bg-slate-300"
+    >
       <body className={`${sora.className} h-full w-full`}>
         <ThemeProvider
           attribute="class"
@@ -33,7 +37,7 @@ export default function RootLayout({
           <div className="dark:bg-slate-950 bg-slate-300 h-full w-full">
             <Header />
             <Navbar />
-            <div className="min-h-[30rem] md:min-h-[40rem] flex items-center justify-center w-full pb-24">
+            <div className="min-h-[28rem] md:min-h-[35rem] dark:bg-slate-950 bg-slate-300 flex items-center justify-center w-full pb-20 lg:pb-0">
               {children}
             </div>
           </div>
