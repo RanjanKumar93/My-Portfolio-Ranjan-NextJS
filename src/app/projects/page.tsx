@@ -1,9 +1,20 @@
-import React from 'react'
+"use client";
 
-const page = () => {
+import Projects from "@/components/projects/Projects";
+import { motion } from "framer-motion";
+
+const ProjectsPage = () => {
   return (
-    <div>page</div>
-  )
-}
+    <motion.div
+      initial={{ y: 80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: -80, opacity: 0 }}
+      transition={{ duration: 0.4 }}
+      className="h-full container"
+    >
+      <Projects />
+    </motion.div>
+  );
+};
 
-export default page
+export default ProjectsPage;

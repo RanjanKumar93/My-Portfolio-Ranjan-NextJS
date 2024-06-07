@@ -1,19 +1,22 @@
-"use client"
+"use client";
 
 import { useRouter } from "next/navigation";
-
 
 const NotFoundPage = () => {
   const router = useRouter();
 
   const handleGoHome = () => {
-    router.push('/');
+    router.push("/");
   };
 
   return (
     <div style={styles.container}>
       <h1 className="dark:text-white ">Page Not Found</h1>
-      <button onClick={handleGoHome} style={styles.button} className="dark:text-white">
+      <button
+        onClick={handleGoHome}
+        style={styles.button}
+        className="dark:text-white"
+      >
         Go Home
       </button>
     </div>
@@ -22,24 +25,21 @@ const NotFoundPage = () => {
 
 const styles = {
   container: {
-    display: 'flex',
-    flexDirection: 'column' as 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    // backgroundColor: '#f0f0f0',
-    textAlign: 'center' as 'center',
-    color: '#333',
+    display: "flex",
+    flexDirection: "column" as "column",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "100vh",
+    textAlign: "center" as "center",
+    color: "#333",
   },
   button: {
-    marginTop: '20px',
-    padding: '10px 20px',
-    fontSize: '16px',
-    cursor: 'pointer',
-    // backgroundColor: '#0070f3',
-    // color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
+    marginTop: "20px",
+    padding: "10px 20px",
+    fontSize: "16px",
+    cursor: "pointer",
+    border: "none",
+    borderRadius: "5px",
   },
 };
 
